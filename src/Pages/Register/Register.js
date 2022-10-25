@@ -3,6 +3,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
 
@@ -81,19 +82,17 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="/" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
-                            <div className="form-control mt-4">
+                            <div className="form-control mt-3">
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </Form>
-                        <div className="form-control">
-                            <button className="btn btn-primary mx-7" onClick={googleSignin}>Join with Google</button>
-                        </div>
-                        <div className="form-control mt-2">
-                            <button className="btn btn-primary mx-7" onClick={githubSignIn}>Join with Github</button>
+                        <div>
+                            <p>Register with</p>
+                            <div className="flex align-middle justify-center gap-6 text-4xl mt-3">
+                                <FaGoogle onClick={googleSignin}></FaGoogle>
+                                <FaGithub onClick={githubSignIn}></FaGithub>
+                            </div>
                         </div>
                         <p className='py-2'>Already have an account? <Link className='text-blue-600' to='/login'>Login</Link></p>
                     </div>
