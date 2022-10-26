@@ -1,14 +1,19 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import Header from '../Shared/Header/Header';
+import { useState } from 'react';
 
 const Register = () => {
 
-    const { createUser, providerSignIn } = useContext(AuthContext);
+    const [error, setError] = useState('')
+
+    const { createUser, providerSignIn, updateUserProfile } = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     const googleProvider = new GoogleAuthProvider()
     const gitHubProvider = new GithubAuthProvider()
@@ -25,12 +30,27 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                setError('')
+                handleUpdateProfile(name, photoURL);
+                navigate('/')
+
                 console.log(user);
 
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
 
         console.log(name, photoURL, email, password);
+
+    }
+
+    const handleUpdateProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => {})
+            .catch(error => console.error(error))
 
     }
 
@@ -38,6 +58,7 @@ const Register = () => {
         providerSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
+                navigate('/')
                 console.log(user);
 
             })
@@ -47,6 +68,7 @@ const Register = () => {
         providerSignIn(gitHubProvider)
             .then(result => {
                 const user = result.user;
+                navigate('/')
                 console.log(user);
 
             })
@@ -88,6 +110,7 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </Form>
+                        <p className='text-center text-red-500'>{error}</p>
                         <div>
                             <p className='text-center'>Register with</p>
                             <div className="flex align-middle justify-center gap-6 text-5xl mt-3 ">
