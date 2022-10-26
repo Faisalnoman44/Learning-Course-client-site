@@ -1,13 +1,17 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Header from '../Shared/Header/Header';
 
 const Login = () => {
+    const googleProvider = new GoogleAuthProvider()
+    const gitHubProvider = new GithubAuthProvider()
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn , providerSignIn} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
 
@@ -31,8 +35,30 @@ const Login = () => {
 
 
             })
-            .catch(error =>setError(error.message))
+            .catch(error => setError(error.message))
 
+    }
+
+
+    const googleSignin = () => {
+        providerSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                navigate('/')
+                console.log(user);
+
+            })
+            .catch(error => console.error(error))
+    }
+    const githubSignIn = () => {
+        providerSignIn(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                navigate('/')
+                console.log(user);
+
+            })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -59,6 +85,13 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+                            </div>
+                            <div>
+                                <p className='text-center'>Login with</p>
+                                <div className="flex align-middle justify-center gap-6 text-5xl mt-3 ">
+                                    <FaGoogle className='rounded-xl hover:bg-slate-400 p-1' onClick={googleSignin}></FaGoogle>
+                                    <FaGithub className='rounded-xl hover:bg-slate-400 p-1' onClick={githubSignIn}></FaGithub>
+                                </div>
                             </div>
                             <p>New here? <Link className='text-blue-600' to='/register'>Register now</Link></p>
                         </Form>

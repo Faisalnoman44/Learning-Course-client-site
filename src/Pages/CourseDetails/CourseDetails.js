@@ -8,7 +8,7 @@ const CourseDetails = () => {
     return (
         <div>
             <h1 className='text-center text-4xl font-semibold my-5'>{name}</h1>
-            <p className='text-xl text-gray-600'>{details}</p>
+            <p className='text-xl text-gray-600 p-3'>{details}</p>
         </div>
     );
 };

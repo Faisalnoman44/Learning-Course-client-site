@@ -8,9 +8,9 @@ const Course = () => {
         <div className='px-8 bg-emerald-900 mb-4 pb-3'>
             <h1 className='text-3xl md:text-6xl text-center my-5 text-white'>Course Name: {name} </h1>
             <div className='text-center m-2'>
-                <button className="btn btn-outline btn-accent">Download PDF</button>
+                <button className="btn btn-outline btn-accent mb-2">Download PDF</button>
             </div>
-            <div className="card lg:card-side bg-base-100 shadow-xl h-[80vh]">
+            <div className="card lg:card-side bg-base-100 shadow-xl h-[90vh] md:h-[80vh]">
                 <figure className='w-full h-64 md:h-full  md:w-7/12'>
                     <img className='' alt='' src={picture}></img>
                 </figure>

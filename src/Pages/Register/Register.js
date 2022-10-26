@@ -29,17 +29,16 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                form.reset();
                 setError('')
                 handleUpdateProfile(name, photoURL);
+                form.reset();
                 navigate('/')
-
                 console.log(user);
+                
 
             })
             .catch(error => setError(error.message))
-
-        console.log(name, photoURL, email, password);
+        console.log(name, photoURL)
 
     }
 
