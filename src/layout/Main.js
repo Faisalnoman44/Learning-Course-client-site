@@ -17,7 +17,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div className='grid grid-cols-1 md:grid-cols-4'>
+            <div className='grid grid-cols-1 md:grid-cols-4 '>
                 <div className='col-span-1'>
                     {
                         catagories.map(catagory => <Table key={catagory.id}>
@@ -25,7 +25,7 @@ const Main = () => {
                         </Table>)
                     }
                 </div>
-                <div className='col-span-3 bg-slate-500'>
+                <div className='col-span-3'>
                     <Outlet></Outlet>
                 </div>
             </div>
