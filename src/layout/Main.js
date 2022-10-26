@@ -18,9 +18,14 @@ const Main = () => {
         <div>
             <Header></Header>
             <div className='grid grid-cols-1 md:grid-cols-4 '>
-                <div className='col-span-1'>
+                <div className='col-span-1 hidden md:block'>
                     {
-                        courses.map(course => <Link to={`/course/${course.id}`}> <Table key={course.id} course={course}></Table></Link >)
+                        courses.map(course =>
+                            <Link to={`/course/${course.id}`} key={course.id}>
+                                <Table
+                                    course={course}>
+                                </Table>
+                            </Link >)
                     }
                 </div>
                 <div className='col-span-3 w-11/12 mx-auto'>
