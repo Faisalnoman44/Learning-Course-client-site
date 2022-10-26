@@ -11,7 +11,7 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider()
     const gitHubProvider = new GithubAuthProvider()
 
-    const { signIn , providerSignIn} = useContext(AuthContext);
+    const { signIn, providerSignIn } = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
 
@@ -44,7 +44,7 @@ const Login = () => {
         providerSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
-                navigate('/')
+                navigate(from, { replace: true })
                 console.log(user);
 
             })
@@ -54,7 +54,7 @@ const Login = () => {
         providerSignIn(gitHubProvider)
             .then(result => {
                 const user = result.user;
-                navigate('/')
+                navigate(from, { replace: true })
                 console.log(user);
 
             })

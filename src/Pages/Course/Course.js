@@ -6,7 +6,7 @@ const Course = () => {
     const {id, name, picture, details } = course
     return (
         <div className='px-8 bg-emerald-900 mb-4 pb-3'>
-            <h1 className='text-3xl md:text-6xl text-center my-5 text-white'>Course Name: {name} </h1>
+            <h1 className='text-2xl md:text-4xl text-center my-5 text-white pt-2'>Course Name: {name} </h1>
             <div className='text-center m-2'>
                 <button className="btn btn-outline btn-accent mb-2">Download PDF</button>
             </div>

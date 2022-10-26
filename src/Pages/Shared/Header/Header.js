@@ -34,6 +34,7 @@ const Header = () => {
                     <div className='flex'>
                         <Link className='mr-2 md:mr-3' to='/'>Home</Link>
                         <Link className='mr-2 md:mr-3' to='/courses'>Courses</Link>
+                        <div> <Link className='mr-2 md:mr-3 hidden md:block' to='/blog'>Blog</Link></div>
                         <div> <Link className='mr-2 md:mr-3 hidden md:block'>FAQ</Link></div>
                         <div> <Link className='mr-2 md:mr-3 hidden md:block'>Dark</Link></div>
 

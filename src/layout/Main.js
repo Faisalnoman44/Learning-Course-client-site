@@ -28,7 +28,7 @@ const Main = () => {
                             </Link >)
                     }
                 </div>
-                <div className='col-span-3 w-full md:w-11/12 mx-auto pl-1'>
+                <div className='col-span-3 w-full lg:w-11/12 mx-auto p'>
                     <Outlet></Outlet>
                 </div>
             </div>
