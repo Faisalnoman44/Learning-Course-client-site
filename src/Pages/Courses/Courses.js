@@ -16,7 +16,8 @@ const Courses = () => {
 
     return (
         <div className='w-10/12 mx-auto'>
-            <div className='grid grid-cols-2'>
+            <h1 className='text-center text-3xl m-4 text-gray-500 font-semibold'>Courses</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2'>
             {
                 courses.map(course => <Card key={course.id} course={course}></Card>)
             }

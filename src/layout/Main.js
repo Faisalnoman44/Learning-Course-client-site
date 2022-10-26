@@ -1,18 +1,18 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Header from '../Pages/Shared/Header/Header';
 import Table from '../Pages/Shared/Table/Table';
 
 const Main = () => {
-    const [catagories, setCatagories] = useState([])
+    const [courses, setCourses] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:5000/catagories')
-        .then(res => res.json())
-        .then(data=> setCatagories(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setCourses(data))
+    }, [])
 
     return (
         <div>
@@ -20,12 +20,10 @@ const Main = () => {
             <div className='grid grid-cols-1 md:grid-cols-4 '>
                 <div className='col-span-1'>
                     {
-                        catagories.map(catagory => <Table key={catagory.id}>
-                            {catagory.name}
-                        </Table>)
+                        courses.map(course => <Link to={`/course/${course.id}`}> <Table key={course.id} course={course}></Table></Link >)
                     }
                 </div>
-                <div className='col-span-3'>
+                <div className='col-span-3 w-11/12 mx-auto'>
                     <Outlet></Outlet>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import Header from '../Shared/Header/Header';
 
 const Register = () => {
 
@@ -55,6 +56,7 @@ const Register = () => {
     return (
 
         <div>
+            <Header></Header>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-9/12">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -88,13 +90,13 @@ const Register = () => {
                             </div>
                         </Form>
                         <div>
-                            <p>Register with</p>
-                            <div className="flex align-middle justify-center gap-6 text-4xl mt-3">
-                                <FaGoogle onClick={googleSignin}></FaGoogle>
-                                <FaGithub onClick={githubSignIn}></FaGithub>
+                            <p className='text-center'>Register with</p>
+                            <div className="flex align-middle justify-center gap-6 text-5xl mt-3 ">
+                                <FaGoogle className='rounded-xl hover:bg-slate-400 p-1' onClick={googleSignin}></FaGoogle>
+                                <FaGithub className='rounded-xl hover:bg-slate-400 p-1' onClick={githubSignIn}></FaGithub>
                             </div>
                         </div>
-                        <p className='py-2'>Already have an account? <Link className='text-blue-600' to='/login'>Login</Link></p>
+                        <p className='py-2 text-center'>Already have an account? <Link className='text-blue-600' to='/login'>Login</Link></p>
                     </div>
                 </div>
             </div>

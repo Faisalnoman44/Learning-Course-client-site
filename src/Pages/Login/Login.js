@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Header from '../Shared/Header/Header';
 
 const Login = () => {
 
@@ -26,6 +27,7 @@ const Login = () => {
 
     return (
         <div className=''>
+            <Header></Header>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-9/12">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
