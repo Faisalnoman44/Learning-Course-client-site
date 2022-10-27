@@ -11,7 +11,7 @@ const Header = () => {
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/catagories')
+        fetch('https://learning-course-server-one.vercel.app')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
