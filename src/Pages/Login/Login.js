@@ -32,11 +32,8 @@ const Login = () => {
                 console.log(user);
                 setError('')
                 navigate(from, { replace: true })
-
-
             })
             .catch(error => setError(error.message))
-
     }
 
 

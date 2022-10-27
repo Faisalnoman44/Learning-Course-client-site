@@ -24,7 +24,12 @@ const Home = () => {
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
             </div>
-            <p className='text-center mt-3'><span className='text-lg font-semibold text-blue-700'>To see courses </span><Link to='/courses'><button className="btn btn-outline btn-success">Click here</button></Link></p>
+            <p className='text-center mt-3 mb-3'>
+                <span className='text-lg font-semibold text-blue-700'>To see courses </span>
+                <Link to='/courses'>
+                    <button className="btn btn-outline btn-success">Click here</button>
+                </Link>
+            </p>
         </div>
     );
 };

@@ -34,8 +34,6 @@ const Register = () => {
                 form.reset();
                 navigate('/')
                 console.log(user);
-                
-
             })
             .catch(error => setError(error.message))
         console.log(name, photoURL)
@@ -59,7 +57,6 @@ const Register = () => {
                 const user = result.user;
                 navigate('/')
                 console.log(user);
-
             })
             .catch(error => console.error(error))
     }
@@ -69,7 +66,6 @@ const Register = () => {
                 const user = result.user;
                 navigate('/')
                 console.log(user);
-
             })
             .catch(error => console.error(error))
     }

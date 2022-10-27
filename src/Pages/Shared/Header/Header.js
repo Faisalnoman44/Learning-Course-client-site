@@ -11,7 +11,7 @@ const Header = () => {
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
-        fetch('https://learning-course-server-one.vercel.app')
+        fetch('https://learning-course-server-one.vercel.app/catagories')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
@@ -27,7 +27,7 @@ const Header = () => {
             <div className="navbar shadow-lg bg-base-100 fixed top-0 z-50 md:px-3">
                 <div className="flex-1">
                     <img className=' h-[30px] md:h-[60px]' src="https://cdn.iconscout.com/icon/free/png-256/code-coding-development-programming-language-board-sign-seo-tool-1-24717.png" alt="" />
-                    <Link href='/' className="btn btn-ghost normal-case text-base md:text-xl">Code Learner</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-base md:text-xl">Code Learner</Link>
 
                 </div>
                 <div className="flex-none">
@@ -89,8 +89,9 @@ const Header = () => {
                                     courses.map(c => <li key={c.id}><Link className='mr-3' to={`/course/${c.id}`} >{c.name}</Link></li>)
                                 }
                             </div>
-                            <li><Link className='mt-2'>FAQ</Link></li>
-                            <li><Link className=''>Dark Mode</Link></li>
+                            <li><Link className='mt-2' to='/blog'>Blog</Link></li>
+                            <li><Link className='mt-2' to='/FAQ'>FAQ</Link></li>
+                            <li><Link>Dark Mode</Link></li>
                             {
                                 user?.uid ?
                                     <li><Link onClick={handleLogOut} href='/'>Logout</Link></li>
