@@ -3,6 +3,7 @@ Website Name: Code Learner
 Live Site Link: https://code-learning-edd1f.web.app/
 
 Bullet Points:
+
 1.In this website you will see in right side top in navber you are login or not.If You are login you will see Logout button there, if you are not login you will see Login and Register button.
 
 2.In top right side of the navber if you login you will see the User's photo.
@@ -15,6 +16,7 @@ Bullet Points:
 
 
 List of frameworks:
+
 1.Tailwind CSS
 2.DaysiUI
 3.react router DOM
