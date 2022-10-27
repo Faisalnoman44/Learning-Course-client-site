@@ -26,17 +26,17 @@ const Header = () => {
         <div className='mb-[80px]'>
             <div className="navbar shadow-lg bg-base-100 fixed top-0 z-50 md:px-3">
                 <div className="flex-1">
-                    <img className='h-[30px] md:h-[60px]' src="https://cdn.iconscout.com/icon/free/png-256/code-coding-development-programming-language-board-sign-seo-tool-1-24717.png" alt="" />
-                    <a href='/' className="btn btn-ghost normal-case text-lg md:text-xl">Code Learner</a>
+                    <img className=' h-[30px] md:h-[60px]' src="https://cdn.iconscout.com/icon/free/png-256/code-coding-development-programming-language-board-sign-seo-tool-1-24717.png" alt="" />
+                    <Link href='/' className="btn btn-ghost normal-case text-base md:text-xl">Code Learner</Link>
 
                 </div>
                 <div className="flex-none">
                     <div className='flex '>
-                        <Link className='mr-2 md:mr-3 hover:bg-slate-300 px-2 py-2 rounded-md' to='/'>Home</Link>
-                        <Link className='mr-2 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/courses'>Courses</Link>
-                        <div><Link className='mr-2 md:mr-3 hidden md:block  hover:bg-slate-300 px-2 py-2 rounded-md' to='/blog'>Blog</Link></div>
-                        <div><Link className='mr-2 md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>FAQ</Link></div>
-                        <div><Link className='mr-2 md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>Dark</Link></div>
+                        <Link className='mr-1 md:mr-3 hover:bg-slate-300 px-2 py-2 rounded-md' to='/'>Home</Link>
+                        <Link className='mr-1 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/courses'>Courses</Link>
+                        <div><Link className=' md:mr-3 hidden md:block  hover:bg-slate-300 px-2 py-2 rounded-md' to='/blog'>Blog</Link></div>
+                        <div><Link className=' md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>FAQ</Link></div>
+                        <div><Link className=' md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>Dark</Link></div>
                     </div>
                     <div className="dropdown dropdown-end">
                         <div>
@@ -45,10 +45,10 @@ const Header = () => {
                                     <>
                                         <Link onClick={handleLogOut} className='hidden md:block mr-3  hover:bg-slate-300 px-2 py-2 rounded-md'>Logout</Link>
                                     </> :
-                                    <>
-                                        <Link className='mr-1 md:mr-3' to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
-                                    </>
+                                    <div className="hidden md:block">
+                                        <Link className='mr-1 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/login'>Login</Link>
+                                        <Link className='mr-1 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/register'>Register</Link>
+                                    </div>
                             }
 
                         </div>
@@ -91,7 +91,15 @@ const Header = () => {
                             </div>
                             <li><Link className='mt-2'>FAQ</Link></li>
                             <li><Link className=''>Dark Mode</Link></li>
-                            <li><Link onClick={handleLogOut} href='/'>Logout</Link></li>
+                            {
+                                user?.uid ?
+                                    <li><Link onClick={handleLogOut} href='/'>Logout</Link></li>
+                                    :
+                                    <>
+                                        <li><Link className='mr-1 md:mr-3' to='/login'>Login</Link></li>
+                                        <li> <Link to='/register'>Register</Link></li>
+                                    </>
+                            }
                         </ul>
                     </div>
                 </div>
