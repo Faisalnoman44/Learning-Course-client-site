@@ -31,20 +31,19 @@ const Header = () => {
 
                 </div>
                 <div className="flex-none">
-                    <div className='flex'>
-                        <Link className='mr-2 md:mr-3' to='/'>Home</Link>
-                        <Link className='mr-2 md:mr-3' to='/courses'>Courses</Link>
-                        <div> <Link className='mr-2 md:mr-3 hidden md:block' to='/blog'>Blog</Link></div>
-                        <div> <Link className='mr-2 md:mr-3 hidden md:block'>FAQ</Link></div>
-                        <div> <Link className='mr-2 md:mr-3 hidden md:block'>Dark</Link></div>
-
+                    <div className='flex '>
+                        <Link className='mr-2 md:mr-3 hover:bg-slate-300 px-2 py-2 rounded-md' to='/'>Home</Link>
+                        <Link className='mr-2 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/courses'>Courses</Link>
+                        <div><Link className='mr-2 md:mr-3 hidden md:block  hover:bg-slate-300 px-2 py-2 rounded-md' to='/blog'>Blog</Link></div>
+                        <div><Link className='mr-2 md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>FAQ</Link></div>
+                        <div><Link className='mr-2 md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>Dark</Link></div>
                     </div>
                     <div className="dropdown dropdown-end">
                         <div>
                             {
                                 user?.uid ?
                                     <>
-                                        <Link onClick={handleLogOut} className='hidden md:block mr-3'>Logout</Link>
+                                        <Link onClick={handleLogOut} className='hidden md:block mr-3  hover:bg-slate-300 px-2 py-2 rounded-md'>Logout</Link>
                                     </> :
                                     <>
                                         <Link className='mr-1 md:mr-3' to='/login'>Login</Link>
@@ -63,7 +62,7 @@ const Header = () => {
                          before:left-1/2 before:-bottom-3
                          before:w-max before:max-w-xs
                          before:-translate-x-1/2 before:translate-y-full
-                         before: bg-gray-700 before:text-gray
+                         before: bg-gray-200 before:text-blue-500
                          before:rounded-md before:opacity-0
                          before: transition-all
                          
@@ -80,7 +79,7 @@ const Header = () => {
 
                          hover:before:opacity-100 hover:after:opacity-100
 
-                        " data-tip={user.displayName}>
+                        " data-tip={user?.displayName}>
                             <div className="w-10 rounded-full">{user?.photoURL ? <img alt='' src={user.photoURL} /> : <FaUserAlt className='mt-2 ml-2 text-xl'></FaUserAlt>}
                             </div>
                         </label>

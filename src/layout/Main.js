@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Footer from '../Pages/Shared/Footer/Footer';
 import Header from '../Pages/Shared/Header/Header';
 import Table from '../Pages/Shared/Table/Table';
 
@@ -32,6 +33,7 @@ const Main = () => {
                     <Outlet></Outlet>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
