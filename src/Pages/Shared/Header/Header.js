@@ -35,7 +35,7 @@ const Header = () => {
                         <Link className='mr-1 md:mr-3 hover:bg-slate-300 px-2 py-2 rounded-md' to='/'>Home</Link>
                         <Link className='mr-1 md:mr-3 px-2 py-2 rounded-md  hover:bg-slate-300' to='/courses'>Courses</Link>
                         <div><Link className=' md:mr-3 hidden md:block  hover:bg-slate-300 px-2 py-2 rounded-md' to='/blog'>Blog</Link></div>
-                        <div><Link className=' md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>FAQ</Link></div>
+                        <div><Link className=' md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md' to='/FAQ'>FAQ</Link></div>
                         <div><Link className=' md:mr-3 hidden md:block px-2 py-2  hover:bg-slate-300 rounded-md'>Dark</Link></div>
                     </div>
                     <div className="dropdown dropdown-end">
