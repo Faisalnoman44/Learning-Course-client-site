@@ -55,7 +55,32 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar
+                        relative
+                         before:content-[attr(data-tip)]
+                         before:absolute
+                         before:px-3 before:py-2
+                         before:left-1/2 before:-bottom-3
+                         before:w-max before:max-w-xs
+                         before:-translate-x-1/2 before:translate-y-full
+                         before: bg-gray-700 before:text-gray
+                         before:rounded-md before:opacity-0
+                         before: transition-all
+                         
+                         after:absolute
+                         after:left-1/2 after:-bottom-3
+                         after:w-0 after:h-0
+                         after:-translate-x-1/2 after:border-8
+                         after:border-b-gray-700
+                         after:border-l-transparent
+                         after:border-t-transparent
+                         after:border-r-transparent
+                         after:opacity-0
+                         after:transition-0
+
+                         hover:before:opacity-100 hover:after:opacity-100
+
+                        " data-tip={user.displayName}>
                             <div className="w-10 rounded-full">{user?.photoURL ? <img alt='' src={user.photoURL} /> : <FaUserAlt className='mt-2 ml-2 text-xl'></FaUserAlt>}
                             </div>
                         </label>
