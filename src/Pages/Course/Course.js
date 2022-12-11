@@ -9,7 +9,7 @@ const Course = () => {
     const course = useLoaderData()
     const { id, name, picture, details } = course
     return (
-        <div className='px-8 bg-emerald-900 mb-4 pb-3'>
+        <div className='px-2 bg-emerald-900 mb-4 pb-3'>
             <h1 className='text-2xl md:text-4xl text-center my-5 text-white pt-2'>Course Name: {name} </h1>
             <div className='text-center m-2'>
                 <Pdf targetRef={ref} filename="code-example.pdf">

@@ -6,7 +6,7 @@ const Home = () => {
         <div className='md:w-11/12  mx-auto mt-2'>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">
-                    <img alt='' src='https://miro.medium.com/max/1400/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg' className="w-full" />
+                    <img alt='' src="https://www.techyv.com/sites/default/2022/01/users/Proofreader4/lag.png" className="w-full" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
                     <img alt='' src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg" className="w-full" />
