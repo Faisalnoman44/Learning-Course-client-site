@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
-import Blog from "../../Pages/Blog/Blog";
 import Course from "../../Pages/Course/Course";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses";
@@ -35,10 +34,6 @@ export const routes = createBrowserRouter([
                 path: '/coursedetails/:id',
                 element: <PrivateRoutes><CourseDetails></CourseDetails></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://learning-course-server-one.vercel.app/catagories/${params.id}`)
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>
             },
             {
                 path: '/FAQ',
